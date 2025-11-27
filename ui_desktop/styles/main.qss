@@ -1,0 +1,424 @@
+/* Общие настройки */
+QWidget {
+    font-family: "IBM Plex Sans";
+    color: #ffffff;
+}
+
+/* ЛОГИН */
+#loginBackground {
+    background-color: #2148C0;
+    /* картинка поверх фона */
+    background-image: url("assets/img/login_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: content;
+    background-clip: border;
+}
+
+#loginLogo {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+QLineEdit#loginEdit,
+QLineEdit#passwordEdit {
+    min-width: 444px;
+    max-width: 444px;
+    min-height: 44px;
+    padding-left: 32px; /* отступ под иконку слева */
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.7);
+    background-color: transparent;
+    color: #ffffff;
+}
+
+QLineEdit#loginEdit {
+    background-repeat: no-repeat;
+}
+
+QLineEdit#loginEdit::placeholder,
+QLineEdit#passwordEdit::placeholder {
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+QPushButton#loginButton {
+    min-height: 48px;
+    width: 300px;
+    background-color: #ffffff;
+    color: #1044D4;
+    border-radius: 4px;
+    font-weight: 600;
+    border: none;
+}
+
+QPushButton#loginButton:hover {
+    background-color: #f0f0f0;
+}
+
+QPushButton#forgotPasswordButton {
+    color: #ffffff;
+    text-decoration: underline;
+    border: none;
+}
+
+/* HEADER */
+#header {
+    background-color: #F7F7F8;
+    min-height: 110px;
+}
+
+#headerLogo {
+    font-family: 'IBM Plex Sans';
+    font-size: 20px;
+    font-weight: 700;
+    color: #e53935; /* ПЕРЕЕЗД красный */
+}
+
+#body {
+    background-color: #ffffff;
+}
+
+/* Навигация */
+#navHome, #navArchive, #navProfile {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    /* одинаковая шировка прямоугольников */
+    min-width: 210px;
+    max-width: 210px;
+
+    /* выравнивание текста */
+    padding: 10px 0;
+
+    /* шрифт */
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+
+    text-align: center;
+}
+
+/* hover — белый прямоугольник */
+#navHome:hover,
+#navArchive:hover,
+#navProfile:hover {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+/* active (checked) — белый фон и красная обводка */
+#navHome:checked,
+#navArchive:checked,
+#navProfile:checked {
+    background: #ffffff;
+    border: 1px solid #e53935;
+    color: #000000;
+}
+
+#langButton {
+    background: transparent;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;    /* 16 px */
+    color: #000000;
+    padding: 4px 10px;
+}
+
+#langButton:hover {
+    background: transparent; /* если не нужен прямоугольник */
+    border: none;
+    color: #264ECA;          /* можно тоже подсвечивать синим */
+}
+
+
+/* Заголовки секций */
+#simplePageTitle {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#sectionTitle {
+    font-size: 26px;
+    font-weight: 600;
+    color: #FF0000;   /* Триггеры — красным */
+}
+
+/* Триггеры */
+#triggerCard {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    color: #000000;
+}
+
+#triggerImage {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    /* В Qt видимый клип может зависеть от платформы, но визуально скругление будет соответствовать макету */
+}
+
+#triggerTitle {
+    font-weight: 600;
+    color: #ff0000;
+    font-size: 20px;
+}
+
+#triggerInfo {
+    font-size: 15px;
+    color: #353535;
+}
+
+#triggerFooter {
+    font-size: 12px;
+    color: #555555;
+}
+
+/* Collapsible */
+#collapsibleHeader {
+    color: #000000;
+    font-size: 26px;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+}
+
+#collapsibleContent {
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 0px;
+}
+
+/* Шапка таблицы */
+#statsTable QHeaderView::section {
+    background-color: #E0E0E0;
+    color: #000000;
+    font-weight: 600;
+    font-size: 12px;     
+    padding: 4px 8px;
+    border: none;
+}
+
+#statsChartFrame {
+    background-color: #ffffff !important;
+    border: none;   /* убираем серые границы */
+    padding: 0px;   /* убираем паддинги */
+}
+
+/* Таблица статистики */
+#statsTable {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    gridline-color: #e0e0e0;
+    font-size: 12px;
+}
+
+#statsTable::item {
+    padding: 4px 6px;
+}
+
+/* ========== СТИЛИ ДЛЯ ПРАВОЙ ПАНЕЛИ ========== */
+
+/* Sidebar */
+#sidebar {
+    background-color: #ffffff;
+    border-left: 1px solid #E0E0E0;
+    min-width: 320px;
+    max-width: 320px;
+}
+
+/* Группы в сайдбаре - убраны рамки и настроены заголовки */
+QGroupBox#remindersGroup,
+QGroupBox#newsGroup {
+    background-color: transparent;
+    border: none;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+QGroupBox#remindersGroup::title,
+QGroupBox#newsGroup::title {
+    subcontrol-origin: margin;
+    left: 0px;
+    padding: 0 0 18px 0;
+    color: #000000;      
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ========== НАПОМИНАНИЯ ========== */
+/* Напоминания занимают 1/3 высоты */
+#remindersGroup {
+    min-height: 280px;
+    max-height: 280px;
+}
+
+#noRemindersText {
+    color: #888888;
+    font-size: 14px;
+    font-style: italic;
+    background: transparent;
+    border: none;
+    padding: 20px;
+    margin: 0px;
+}
+
+#noRemindersText:disabled {
+    color: #888888;
+}
+
+/* ========== НОВОСТИ ========== */
+/* Новости занимают 2/3 высоты - увеличенная высота */
+#newsGroup {
+    min-height: 450px;
+    max-height: 450px;
+}
+
+#newsImage {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    color: #666666;
+    font-size: 12px;
+    min-height: 350px;
+    max-height: 350px;
+}
+
+#newsImage:disabled {
+    color: #666666;
+}
+
+/* Таблица тревог — делаем текст тёмным и видимым */
+#alertsTable,
+#alertsTable QHeaderView::section {
+    color: #111827;            /* цвет текста */
+    background: #ffffff;       /* фон строк */
+}
+
+#alertsTable QTableCornerButton::section {
+    background: #ffffff;
+}
+
+#alertsTable::item:selected {
+    color: #ffffff;            /* цвет текста в выбранной строке */
+    background: #2563eb;       /* цвет выделения (как у тебя в макете) */
+}
+
+
+
+/* ===== Личный кабинет ===== */
+
+QWidget#profilePage {
+    background: #ffffff;
+}
+
+/* Аватар */
+QLabel#profileAvatar {
+    border-radius: 65px;      /* половина 96x96 */
+    border: 2px solid #ffffff;
+    background: #e0e0e0;      /* на случай, если нет картинки */
+}
+
+/* Должность и ФИО */
+QLabel#profilePosition {
+    font-size: 18px;
+    color: #777777;
+}
+
+QLabel#profileName {
+    font-size: 38px;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* Доп. информация */
+QLabel#profileBirth,
+QLabel#profileExperience {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    margin-left: 15px;
+}
+
+/* Карточка контактов */
+QFrame#profileContactsCard {
+    background-color: #003160;
+    border-radius: 12px;
+    padding: 5px 15px;
+}
+
+QLabel#profileContactsTitle {
+    font-size: 24px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+QLabel#profileContactsAdd {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Внутри карточки — белый текст по умолчанию */
+QFrame#profileContactsCard QLabel {
+    color: #ffffff;
+}
+
+/* Правый сайдбар профиля */
+QFrame#profileSidebar {
+    border-left: 1px solid #e5e5e5;
+    background: #ffffff;
+}
+
+/* Пункты меню справа */
+QPushButton#profileMenuItemActive {
+    background: #f5f5f5;
+    border-radius: 8px;
+    border-left: 3px solid #ff0000;
+    padding: 6px 12px;
+    text-align: left;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+QPushButton#profileMenuItemActive:hover {
+    background: #ececec;
+}
+
+QPushButton#profileMenuItem {
+    background: transparent;
+    border: none;
+    padding: 6px 12px;
+    text-align: left;
+    color: #555555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+QPushButton#profileMenuItem:hover {
+    background: #f7f7f7;
+    border-radius: 8px;
+}
+
+/* Кнопка выхода */
+QPushButton#profileLogout {
+    background: transparent;
+    border: none;
+    padding: 4px 0;
+    color: #555555;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+QPushButton#profileLogout:hover {
+    color: #ff0000;
+}
+
+
+
